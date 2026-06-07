@@ -1,0 +1,40 @@
+.match-list { display: flex; flex-direction: column; gap: 0; }
+
+.match-group {
+  margin-bottom: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.match-date-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.date-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.date-count {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.match-group-body { display: flex; flex-direction: column; }
+
+.empty-matches {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--text-tertiary);
+  font-size: 14px;
+}

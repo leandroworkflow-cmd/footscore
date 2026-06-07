@@ -1,0 +1,91 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #161b25;
+  --bg-card: #1a2030;
+  --bg-hover: #1f2840;
+  --bg-active: #243050;
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.12);
+  --accent: #00c17c;
+  --accent-dim: rgba(0,193,124,0.15);
+  --accent-hover: #00d988;
+  --text-primary: #f0f2f5;
+  --text-secondary: #8892a4;
+  --text-tertiary: #4a5568;
+  --live: #ff4757;
+  --live-dim: rgba(255,71,87,0.15);
+  --yellow: #ffd32a;
+  --yellow-dim: rgba(255,211,42,0.15);
+  --blue: #2196f3;
+  --blue-dim: rgba(33,150,243,0.15);
+  --font: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --sidebar-w: 240px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font); cursor: pointer; }
+img { display: block; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
+
+.badge-live {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--live-dim); color: var(--live);
+  font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 99px; letter-spacing: 0.02em;
+}
+.badge-live::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--live); animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.badge-ft {
+  font-size: 11px; color: var(--text-tertiary); font-weight: 500;
+}
+
+.badge-sched {
+  font-size: 11px; color: var(--text-secondary); font-weight: 500;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius);
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
